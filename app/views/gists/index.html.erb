@@ -1,0 +1,35 @@
+<div class="navbar navbar-default navbar-fixed-top">
+<div class="navbar-inner">
+<h1>Umieszczanie gistów</h1></div></div>
+<div class="center hero-unit">
+<table border="1">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th><font color="blue">Snippet</font></th>
+      <th><font color="blue">Lang</font></th>
+      <th><font color="blue">Description</font></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+<div class="table">
+  <tbody bgcolor="#99FFCC">
+    <% @gists.each do |gist| %>
+    <div class="display">
+      <tr>
+        <td><%= raw Pygments.highlight(gist.snippet.length > 30 ? gist.snippet[0,90] + "" : gist.snippet, lexer: gist.lang) %></td>
+        <td align="center" width="100"><b><%= gist.lang %></b></td>
+        <td width="150"><%= gist.description %></td>
+        <td width="75" align="center"><button type="button" class="btn btn-default"><%= link_to 'Pokaż', gist %></button></td>
+        <td width="75" align="center"><button type="button" class="btn btn-default"><%= link_to 'Edytuj', edit_gist_path(gist) %></button></td>
+        <td width="75" align="center"><button type="button" class="btn btn-default"><%= link_to 'Usuń', gist, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+      </tr></div>
+    <% end %>
+  </tbody>
+  </div>
+</table>
+<br />
+<center><button type="button" class="btn btn-default btn-large"><%= link_to 'Dodaj', new_gist_path %></button></center>
+<center><%= will_paginate %></center>
+</div>

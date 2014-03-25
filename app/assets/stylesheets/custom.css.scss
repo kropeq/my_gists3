@@ -1,0 +1,53 @@
+@import "bootstrap";
+
+h1 {
+text-align: center;
+font-size:45px;
+color: red;
+}
+
+.table th{
+width: 10%;
+font-size:26px;
+}
+
+.field {
+margin-left: 50px;
+width: 80%;
+height: 10px;
+}
+
+.table td{
+margin-left: 50px;
+margin-right: 50px;
+font-size:20px;
+}
+
+label {
+font-size: 23px;
+}
+
+p {
+font-size: 23px;
+}
+
+.area_kod {
+width: 400px;
+height: 300px;
+background-color: #FFFF66;
+}
+
+.area_opis {
+width: 400px;
+height: 300px;
+background-color: #CCFFCC;
+}
+
+#gist_lang {
+  width: 100%;
+}
+
+.pre{
+	margin: 10px;
+}
+

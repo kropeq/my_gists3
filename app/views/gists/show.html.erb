@@ -1,0 +1,19 @@
+<h1>Treść Twojego GISTA</h1>
+<div class="center hero-unit">
+<p id="notice"><%= notice %></p>
+<p class="navbar-text">
+  <strong>Lang:</strong>
+  <%= @gist.lang %>
+</p>
+<p class="navbar-text">
+  <strong>Description:</strong>
+  <%= @gist.description %>
+</p>
+<p class="navbar-text">
+  <strong>Snippet:</strong>
+</p>
+<%= raw Pygments.highlight(@gist.snippet, lexer: @gist.lang) %>
+<p align="center"><button type="button" class="btn btn-default btn-large"><%= link_to 'Edytuj', edit_gist_path(@gist) %></button> 
+<button type="button" class="btn btn-default btn-large"><%= link_to 'Wróć', gists_path %></button>
+</p>
+</div>
